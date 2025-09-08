@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Leaderboard</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📊 Task Leaderboard</h1>
+      <p class="subtitle">Track your productivity</p>
+    </header>
+
+    <div class="leaderboard">
+      <div class="card completed">
+        ✅ Completed: <span><%= stats.completed %></span>
+      </div>
+      <div class="card progress">
+        🔄 In Progress: <span><%= stats.progress %></span>
+      </div>
+      <div class="card upcoming">
+        ⏳ Upcoming: <span><%= stats.upcoming %></span>
+      </div>
+      <div class="card missed">
+        ❌ Missed: <span><%= stats.missed %></span>
+      </div>
+    </div>
+
+    <footer>
+      <a href="/" class="link">⬅ Back to Tasks</a>
+    </footer>
+  </div>
+</body>
+</html>

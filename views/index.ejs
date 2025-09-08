@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Modern To-Do App</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📝 My To-Do List</h1>
+      <p class="subtitle">Organize your work with style</p>
+    </header>
+
+    <!-- Add Task Form -->
+    <form action="/add" method="POST" class="task-form">
+      <input type="text" name="title" placeholder="Enter your task..." required>
+      <select name="status">
+        <option>Upcoming</option>
+        <option>In Progress</option>
+        <option>Completed</option>
+        <option>Missed</option>
+      </select>
+      <button type="submit">➕ Add Task</button>
+    </form>
+
+    <!-- Task List -->
+    <div class="task-list">
+      <% if(tasks.length === 0) { %>
+        <p class="empty">✨ No tasks yet. Add your first task!</p>
+      <% } %>
+      <% tasks.forEach(task => { %>
+        <div class="task-card <%= task.status.toLowerCase().replace(' ', '-') %>">
+          <div class="task-info">
+            <h3><%= task.title %></h3>
+            <span class="status">Status: <%= task.status %></span>
+          </div>
+          <div class="task-actions">
+            <form action="/delete/<%= task.id %>" method="POST">
+              <button class="delete">🗑 Delete</button>
+            </form>
+            <form action="/update/<%= task.id %>" method="POST">
+              <select name="status" onchange="this.form.submit()">
+                <option <%= task.status==='Upcoming' ? 'selected':'' %>>Upcoming</option>
+                <option <%= task.status==='In Progress' ? 'selected':'' %>>In Progress</option>
+                <option <%= task.status==='Completed' ? 'selected':'' %>>Completed</option>
+                <option <%= task.status==='Missed' ? 'selected':'' %>>Missed</option>
+              </select>
+            </form>
+          </div>
+        </div>
+      <% }) %>
+    </div>
+
+    <footer>
+      <a href="/leaderboard" class="link">📊 View Leaderboard</a>
+    </footer>
+  </div>
+</body>
+</html>

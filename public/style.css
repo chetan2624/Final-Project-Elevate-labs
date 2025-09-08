@@ -1,0 +1,153 @@
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  background: #f3f4f6;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem;
+  color: #222;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.task-form {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.task-form input, .task-form select, .task-form button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 0.9rem;
+}
+
+.task-form button {
+  background: #2563eb;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.task-form button:hover {
+  background: #1e40af;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.task-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f9fafb;
+  padding: 12px 18px;
+  border-radius: 10px;
+  border-left: 6px solid #ccc;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.task-card.completed { border-left-color: #16a34a; }
+.task-card.in-progress { border-left-color: #2563eb; }
+.task-card.upcoming { border-left-color: #f59e0b; }
+.task-card.missed { border-left-color: #dc2626; }
+
+.task-info h3 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.task-info .status {
+  font-size: 0.8rem;
+  color: #666;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.task-actions select, .task-actions button {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.85rem;
+}
+
+.task-actions .delete {
+  background: #dc2626;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.task-actions .delete:hover {
+  background: #b91c1c;
+}
+
+.link {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: bold;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.leaderboard {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.card {
+  padding: 20px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  text-align: center;
+}
+
+.card.completed { background: #16a34a; }
+.card.progress { background: #2563eb; }
+.card.upcoming { background: #f59e0b; }
+.card.missed { background: #dc2626; }
+
+.card span {
+  display: block;
+  font-size: 1.4rem;
+  margin-top: 6px;
+}
