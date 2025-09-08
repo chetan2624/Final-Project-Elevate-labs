@@ -145,6 +145,9 @@ Expose the service to access the app in your browser.
 ```bash
 minikube service todo-service
 ```
+## 📄 Project Report
+You can view or download the full project report here 👉 [Project Report PDF](./docs/Project-Report.pdf)
+
 
 -----
 
